@@ -1,0 +1,622 @@
+{
+  "levels": {
+    "1": {
+      "level_image": {
+        "src": "media/images/level1.png",
+        "x": 1,
+        "y": 1
+      },
+      "level": 1,
+      "enemy": {
+        "name": "Fish",
+        "image": "media/images/monsters/LevelOne.png",
+        "hp": 5,
+        "maxHp": 5,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 10,
+        "card": null
+      }
+    },
+    "2": {
+      "level_image": {
+        "src": "media/images/level2.png",
+        "x": 2,
+        "y": 1
+      },
+      "level": 2,
+      "enemy": {
+        "name": "Chicken",
+        "image": "media/images/monsters/LevelTwo.png",
+        "hp": 6,
+        "maxHp": 6,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 20,
+        "card": "slash"
+      }
+    },
+    "3": {
+      "level_image": {
+        "src": "media/images/level3.png",
+        "x": 3,
+        "y": 1
+      },
+      "level": 3,
+      "enemy": {
+        "name": "Sheep",
+        "image": "media/images/monsters/LevelThree.png",
+        "hp": 7,
+        "maxHp": 7,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 30,
+        "card": null
+      }
+    },
+    "4": {
+      "level_image": {
+        "src": "media/images/level4.png",
+        "x": 4,
+        "y": 1
+      },
+      "level": 4,
+      "enemy": {
+        "name": "Squid",
+        "image": "media/images/monsters/LevelFour.png",
+        "hp": 8,
+        "maxHp": 8,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 40,
+        "card": "split"
+      }
+    },
+    "5": {
+      "level_image": {
+        "src": "media/images/level5.png",
+        "x": 5,
+        "y": 1
+      },
+      "level": 5,
+      "enemy": {
+        "name": "Rabbit",
+        "image": "media/images/monsters/LevelFive.png",
+        "hp": 9,
+        "maxHp": 9,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 50,
+        "card": null
+      }
+    },
+    "6": {
+      "level_image": {
+        "src": "media/images/level6.png",
+        "x": 1,
+        "y": 3
+      },
+      "level": 6,
+      "enemy": {
+        "name": "Pig",
+        "image": "media/images/monsters/LevelSix.png",
+        "hp": 10,
+        "maxHp": 10,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 60,
+        "card": "largemanapotion"
+      }
+    },
+    "7": {
+      "level_image": {
+        "src": "media/images/level7.png",
+        "x": 2,
+        "y": 3
+      },
+      "level": 7,
+      "enemy": {
+        "name": "Cow",
+        "image": "media/images/monsters/LevelSeven.png",
+        "hp": 11,
+        "maxHp": 11,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 70,
+        "card": null
+      }
+    },
+    "8": {
+      "level_image": {
+        "src": "media/images/level8.png",
+        "x": 3,
+        "y": 3
+      },
+      "level": 8,
+      "enemy": {
+        "name": "Bat",
+        "image": "media/images/monsters/LevelEight.png",
+        "hp": 12,
+        "maxHp": 12,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 80,
+        "card": "largehealthpotion"
+      }
+    },
+    "9": {
+      "level_image": {
+        "src": "media/images/level9.png",
+        "x": 4,
+        "y": 3
+      },
+      "level": 9,
+      "enemy": {
+        "name": "Spider",
+        "image": "media/images/monsters/LevelNine.png",
+        "hp": 13,
+        "maxHp": 13,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 90,
+        "card": null
+      }
+    },
+    "10": {
+      "level_image": {
+        "src": "media/images/level10.png",
+        "x": 5,
+        "y": 3
+      },
+      "level": 10,
+      "enemy": {
+        "name": "Dolphin",
+        "image": "media/images/monsters/LevelTen.png",
+        "hp": 14,
+        "maxHp": 14,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 100,
+        "card": "lifesteal"
+      }
+    },
+    "11": {
+      "level_image": {
+        "src": "media/images/level11.png",
+        "x": 1,
+        "y": 2
+      },
+      "level": 11,
+      "enemy": {
+        "name": "Panda",
+        "image": "media/images/monsters/LevelEleven.png",
+        "hp": 15,
+        "maxHp": 15,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 110,
+        "card": null
+      }
+    },
+    "12": {
+      "level_image": {
+        "src": "media/images/level12.png",
+        "x": 2,
+        "y": 2
+      },
+      "level": 12,
+      "enemy": {
+        "name": "Bear",
+        "image": "media/images/monsters/LevelTwelve.png",
+        "hp": 16,
+        "maxHp": 16,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 120,
+        "card": "stab"
+      }
+    },
+    "13": {
+      "level_image": {
+        "src": "media/images/level13.png",
+        "x": 3,
+        "y": 2
+      },
+      "level": 13,
+      "enemy": {
+        "name": "Wolf",
+        "image": "media/images/monsters/LevelThirteen.png",
+        "hp": 17,
+        "maxHp": 17,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 130,
+        "card": null
+      }
+    },
+    "14": {
+      "level_image": {
+        "src": "media/images/level14.png",
+        "x": 4,
+        "y": 2
+      },
+      "level": 14,
+      "enemy": {
+        "name": "Silverfish",
+        "image": "media/images/monsters/LevelFourteen.png",
+        "hp": 18,
+        "maxHp": 18,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 140,
+        "card": "manarevive"
+      }
+    },
+    "15": {
+      "level_image": {
+        "src": "media/images/level15.png",
+        "x": 5,
+        "y": 2
+      },
+      "level": 15,
+      "enemy": {
+        "name": "Zombie",
+        "image": "media/images/monsters/LevelFifteen.png",
+        "hp": 19,
+        "maxHp": 19,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 150,
+        "card": null
+      }
+    },
+    "16": {
+      "level_image": {
+        "src": "media/images/level16.png",
+        "x": 1,
+        "y": 4
+      },
+      "level": 16,
+      "enemy": {
+        "name": "Skeleton",
+        "image": "media/images/monsters/LevelSixteen.png",
+        "hp": 20,
+        "maxHp": 20,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive",
+          "revive"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 160,
+        "card": "revive"
+      }
+    },
+    "17": {
+      "level_image": {
+        "src": "media/images/level17.png",
+        "x": 2,
+        "y": 4
+      },
+      "level": 17,
+      "enemy": {
+        "name": "Witch",
+        "image": "media/images/monsters/LevelSeventeen.png",
+        "hp": 21,
+        "maxHp": 21,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive",
+          "revive"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 170,
+        "card": null
+      }
+    },
+    "18": {
+      "level_image": {
+        "src": "media/images/level18.png",
+        "x": 3,
+        "y": 4
+      },
+      "level": 18,
+      "enemy": {
+        "name": "Ogre",
+        "image": "media/images/monsters/LevelEighteen.png",
+        "hp": 22,
+        "maxHp": 22,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive",
+          "revive",
+          "soulsteal"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 180,
+        "card": "soulsteal"
+      }
+    },
+    "19": {
+      "level_image": {
+        "src": "media/images/level19.png",
+        "x": 4,
+        "y": 4
+      },
+      "level": 19,
+      "enemy": {
+        "name": "Kraken",
+        "image": "media/images/monsters/LevelNineteen.png",
+        "hp": 23,
+        "maxHp": 23,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive",
+          "revive",
+          "soulsteal"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 190,
+        "card": null
+      }
+    },
+    "20": {
+      "level_image": {
+        "src": "media/images/level20.png",
+        "x": 5,
+        "y": 4
+      },
+      "level": 20,
+      "enemy": {
+        "name": "Dragon",
+        "image": "media/images/monsters/LevelTwenty.png",
+        "hp": 24,
+        "maxHp": 24,
+        "mana": 10,
+        "maxMana": 10,
+        "deck": [
+          "stick",
+          "smallmanapotion",
+          "slash",
+          "smallhealthpotion",
+          "split",
+          "largemanapotion",
+          "largehealthpotion",
+          "lifesteal",
+          "stab",
+          "manarevive",
+          "revive",
+          "soulsteal",
+          "suicide"
+        ]
+      },
+      "completed": false,
+      "reward": {
+        "gold": 200,
+        "card": "suicide"
+      }
+    }
+  }
+}
