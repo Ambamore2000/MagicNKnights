@@ -7,7 +7,7 @@ groupproject-team-1-b-aj created by GitHub Classroom
 ## Pseudocode
 
 Looking into changing initializeObjects() function inside MapGraphics.java class to change as such:
-
+```
 Parse JSON File to read all levels information
 Iterate through each level
   Load level image source, x, and y position
@@ -22,3 +22,4 @@ Iterate through each level
   Iterate through reward
     Load gold reward
     Load card reward
+```
