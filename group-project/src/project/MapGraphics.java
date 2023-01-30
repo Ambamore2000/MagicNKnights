@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -80,35 +82,47 @@ public class MapGraphics extends GraphicsPane {
 		levelList1 = new ArrayList<>();
 		levelList2 = new ArrayList<>();
 		
+		// Added to test levelList
+		
+		ArrayList<Level> levelListTest = new ArrayList<>();
+		
 		//TODO: Pseudocode for dynamic loading of levels
 		// Using https://www.geeksforgeeks.org/parse-json-java/ as reference
 		
 		
 		//Parse JSON File to read all levels information
 		
-		JSONObject obj = null;
+		JSONObject jsonObj = null;
 		try {
-			obj = (JSONObject) new JSONParser().parse(new FileReader("project/levels.json"));
+			jsonObj = (JSONObject) new JSONParser().parse(new FileReader("project/levels.json"));
 		} catch (IOException | ParseException e) {
 			System.out.println("ERROR: Problem with parsing levels.json");
 			e.printStackTrace();
 		}
-		System.out.println(obj.toJSONString());
+		System.out.println(jsonObj.toJSONString());
 		
 		//Iterate through each level
-		//Load level image source, x, and y position
-		//Load level number
-		//Iterate through enemy
-		//  Load enemy name
-		//  Load enemy image source
-		//  Load enemy hp, max hp, mana, max mana
-		//  Iterate through enemy deck
-		//    Load each card into deck
-		//Load level completed
-		//Iterate through reward
-		//  Load gold reward
-		//  Load card reward
 		
+		Map levels = ((Map)jsonObj.get("levels"));
+		Iterator<Map.Entry> itr1 = levels.entrySet().iterator();
+        while (itr1.hasNext()) {
+            Map.Entry pair = itr1.next();
+            System.out.println(pair.getKey() + " : " + pair.getValue());
+        
+			//Load level image source, x, and y position
+			//Load level number
+			//Iterate through enemy
+			//  Load enemy name
+			//  Load enemy image source
+			//  Load enemy hp, max hp, mana, max mana
+			//  Iterate through enemy deck
+			//    Load each card into deck
+			//Load level completed
+			//Iterate through reward
+			//  Load gold reward
+			//  Load card reward
+        }
+        
 		Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 		Enemy levelTwoEnemy = new Enemy("Chicken", new GImage("media/images/monsters/LevelTwo.png"), 6, 6, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new Slash())));
 		Enemy levelThreeEnemy = new Enemy("Sheep", new GImage("media/images/monsters/LevelThree.png"), 7, 7, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new SmallHealthPotion(), new Slash())));
