@@ -74,6 +74,23 @@ public class MapGraphics extends GraphicsPane {
 		
 		levelList1 = new ArrayList<>();
 		levelList2 = new ArrayList<>();
+		
+		//TODO: Pseudocode for dynamic loading of levels
+		//Parse JSON File to read all levels information
+		//Iterate through each level
+		//Load level image source, x, and y position
+		//Load level number
+		//Iterate through enemy
+		//  Load enemy name
+		//  Load enemy image source
+		//  Load enemy hp, max hp, mana, max mana
+		//  Iterate through enemy deck
+		//    Load each card into deck
+		//Load level completed
+		//Iterate through reward
+		//  Load gold reward
+		//  Load card reward
+		
 		Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 		Enemy levelTwoEnemy = new Enemy("Chicken", new GImage("media/images/monsters/LevelTwo.png"), 6, 6, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new Slash())));
 		Enemy levelThreeEnemy = new Enemy("Sheep", new GImage("media/images/monsters/LevelThree.png"), 7, 7, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new SmallHealthPotion(), new Slash())));
