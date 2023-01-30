@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -100,15 +101,53 @@ public class MapGraphics extends GraphicsPane {
 			e.printStackTrace();
 		}
 		System.out.println(jsonObj.toJSONString());
-		
+		System.out.println("Start iteration");
 		//Iterate through each level
-		
-		Map levels = ((Map)jsonObj.get("levels"));
-		Iterator<Map.Entry> itr1 = levels.entrySet().iterator();
-        while (itr1.hasNext()) {
-            Map.Entry pair = itr1.next();
-            System.out.println(pair.getKey() + " : " + pair.getValue());
         
+		JSONArray objs = (JSONArray) jsonObj.get("levels");
+	    System.out.println(objs);
+
+	    Iterator objIter = objs.iterator();
+	    int i = 0;
+	    while (objIter.hasNext()) {
+	    	JSONObject test = (JSONObject) objIter.next();
+
+	    	System.out.println("TOJSONSTRING" + test.toJSONString());
+	    	
+	    	JSONObject new_jsonObj = null;
+			try {
+				new_jsonObj = (JSONObject) new JSONParser().parse(test.toJSONString());
+			} catch (ParseException e) {
+				System.out.println("ERROR: TODO");
+				e.printStackTrace();
+			}
+			
+			JSONArray newArray = (JSONArray) new_jsonObj.get(String.valueOf(i + 1));
+			System.out.println(newArray);
+
+	        i++;
+	        System.out.println(i);
+	        
+			Iterator nerwobjIter = newArray.iterator();
+		    int j = 0;
+		    while (nerwobjIter.hasNext()) {
+		    	JSONObject newtest = (JSONObject) nerwobjIter.next();
+		    	System.out.println("NEWTOJSONSTRING" + newtest.toJSONString());
+
+		    	System.out.println("Im going to kill ymself" + ((JSONObject)newtest.get("level_image")).toJSONString());
+		    	
+		    	JSONObject holyShit = ((JSONObject)newtest.get("level_image"));
+		    	
+		    	System.out.println(holyShit.get("src"));
+		    
+		    	Iterator<Map.Entry> itr1 = newtest.entrySet().iterator();
+		        while (itr1.hasNext()) {
+		            Map.Entry pair = itr1.next();
+		            System.out.println(pair.getKey() + " : " + pair.getValue());
+		        }
+		    }
+	    }
+		
 			//Load level image source, x, and y position
 			//Load level number
 			//Iterate through enemy
@@ -121,7 +160,6 @@ public class MapGraphics extends GraphicsPane {
 			//Iterate through reward
 			//  Load gold reward
 			//  Load card reward
-        }
         
 		Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 		Enemy levelTwoEnemy = new Enemy("Chicken", new GImage("media/images/monsters/LevelTwo.png"), 6, 6, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new Slash())));
