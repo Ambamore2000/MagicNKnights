@@ -6,10 +6,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
@@ -76,7 +81,20 @@ public class MapGraphics extends GraphicsPane {
 		levelList2 = new ArrayList<>();
 		
 		//TODO: Pseudocode for dynamic loading of levels
+		// Using https://www.geeksforgeeks.org/parse-json-java/ as reference
+		
+		
 		//Parse JSON File to read all levels information
+		
+		JSONObject obj = null;
+		try {
+			obj = (JSONObject) new JSONParser().parse(new FileReader("project/levels.json"));
+		} catch (IOException | ParseException e) {
+			System.out.println("ERROR: Problem with parsing levels.json");
+			e.printStackTrace();
+		}
+		System.out.println(obj.toJSONString());
+		
 		//Iterate through each level
 		//Load level image source, x, and y position
 		//Load level number
