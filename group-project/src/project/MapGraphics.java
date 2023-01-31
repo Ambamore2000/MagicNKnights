@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,10 +74,15 @@ public class MapGraphics extends GraphicsPane {
 	public MapGraphics(MainMenu program) {
 		super();
 		this.program = program;
-		initializeObjects();
+		try {
+			initializeObjects();
+		} catch (ParseException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	private void initializeObjects() {
+	private void initializeObjects() throws ParseException, FileNotFoundException, IOException {
 		background = new GImage("media/images/Background.png", 0, 0);
 		background.setSize(MainMenu.RESOLUTION_X, MainMenu.RESOLUTION_Y);
 		
@@ -93,73 +99,71 @@ public class MapGraphics extends GraphicsPane {
 		
 		//Parse JSON File to read all levels information
 		
-		JSONObject jsonObj = null;
-		try {
-			jsonObj = (JSONObject) new JSONParser().parse(new FileReader("project/levels.json"));
-		} catch (IOException | ParseException e) {
-			System.out.println("ERROR: Problem with parsing levels.json");
-			e.printStackTrace();
-		}
+		JSONObject jsonObj = (JSONObject) new JSONParser().parse(new FileReader("project/levels.json"));
+		
 		System.out.println(jsonObj.toJSONString());
 		System.out.println("Start iteration");
 		//Iterate through each level
         
-		JSONArray objs = (JSONArray) jsonObj.get("levels");
-	    System.out.println(objs);
+		JSONArray levelsArray = (JSONArray) jsonObj.get("levels");
+		System.out.println("Levels Array:");
+	    System.out.println(levelsArray);
 
-	    Iterator objIter = objs.iterator();
-	    int i = 0;
-	    while (objIter.hasNext()) {
-	    	JSONObject test = (JSONObject) objIter.next();
+	    Iterator levelsArrayIter = levelsArray.iterator();
 
-	    	System.out.println("TOJSONSTRING" + test.toJSONString());
-	    	
-	    	JSONObject new_jsonObj = null;
-			try {
-				new_jsonObj = (JSONObject) new JSONParser().parse(test.toJSONString());
-			} catch (ParseException e) {
-				System.out.println("ERROR: TODO");
-				e.printStackTrace();
-			}
+	    while (levelsArrayIter.hasNext()) {
+	    	JSONObject levelObject = (JSONObject) levelsArrayIter.next();
+
+	    	System.out.println("levelObject:");
+	    	System.out.println(levelObject);
 			
-			JSONArray newArray = (JSONArray) new_jsonObj.get(String.valueOf(i + 1));
-			System.out.println(newArray);
-
-	        i++;
-	        System.out.println(i);
+			JSONArray levelArray = (JSONArray) levelObject.get(String.valueOf(levelObject.keySet().toArray()[0]));
+			System.out.println("levelArray:");
+			System.out.println(levelArray);
 	        
-			Iterator nerwobjIter = newArray.iterator();
-		    int j = 0;
-		    while (nerwobjIter.hasNext()) {
-		    	JSONObject newtest = (JSONObject) nerwobjIter.next();
-		    	System.out.println("NEWTOJSONSTRING" + newtest.toJSONString());
+			Iterator levelArrayIter = levelArray.iterator();
 
-		    	System.out.println("Im going to kill ymself" + ((JSONObject)newtest.get("level_image")).toJSONString());
+		    while (levelArrayIter.hasNext()) {
+		    	JSONObject levelEntry = (JSONObject) levelArrayIter.next();
 		    	
-		    	JSONObject holyShit = ((JSONObject)newtest.get("level_image"));
+				System.out.println("levelEntry:");
+				System.out.println(levelEntry);
+				
+				System.out.println("INFORMATION");
+				//levelOne = new Level(new GImage("media/images/level1.png", 1 * 300, 1 * 200), 1, levelOneEnemy, false, new Reward(program.getPlayer(), 10, null));
+				//Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
+				
+				//Load level image source, x, and y position
+				//Load level number
+				//Iterate through enemy
+				//  Load enemy name
+				//  Load enemy image source
+				//  Load enemy hp, max hp, mana, max mana
+				//  Iterate through enemy deck
+				//    Load each card into deck
+				//Load level completed
+				//Iterate through reward
+				//  Load gold reward
+				//  Load card reward
+				
+				
+		    	System.out.println("Im going to kill ymself" + ((JSONObject)levelEntry.get("level_image")).toJSONString());
 		    	
-		    	System.out.println(holyShit.get("src"));
+		    	JSONObject holyShit = ((JSONObject)levelEntry.get("enemy"));
+		    	
+		    	JSONArray deckArray = (JSONArray) holyShit.get("deck");
+		    	
+		    	System.out.println(deckArray.toJSONString());
 		    
-		    	Iterator<Map.Entry> itr1 = newtest.entrySet().iterator();
+		    	Iterator<Map.Entry> itr1 = levelEntry.entrySet().iterator();
 		        while (itr1.hasNext()) {
 		            Map.Entry pair = itr1.next();
 		            System.out.println(pair.getKey() + " : " + pair.getValue());
 		        }
 		    }
+            System.out.println("--------------------------------");
 	    }
-		
-			//Load level image source, x, and y position
-			//Load level number
-			//Iterate through enemy
-			//  Load enemy name
-			//  Load enemy image source
-			//  Load enemy hp, max hp, mana, max mana
-			//  Iterate through enemy deck
-			//    Load each card into deck
-			//Load level completed
-			//Iterate through reward
-			//  Load gold reward
-			//  Load card reward
+
         
 		Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 		Enemy levelTwoEnemy = new Enemy("Chicken", new GImage("media/images/monsters/LevelTwo.png"), 6, 6, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion(), new Slash())));
