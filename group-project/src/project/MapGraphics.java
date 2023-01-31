@@ -196,8 +196,8 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println("--cards:");
 				Iterator enemyDeckArrayIter = enemyDeckArray.iterator();
 				while (enemyDeckArrayIter.hasNext()) {
-					String cardString = (String) enemyDeckArrayIter.next();
-					System.out.println(cardString);
+					String enemyCardString = (String) enemyDeckArrayIter.next();
+					System.out.println(enemyCardString);
 				}
 				System.out.println("--");
 				
@@ -207,11 +207,25 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(levelCompleted);
 				
 				//Iterate through reward
-				//  Load gold reward
-				//  Load card reward
+				String rewardCardString;
+				int gold;
+				JSONObject rewardObject = (JSONObject) levelEntry.get("reward");
 				
+				System.out.println("rewardObject:");
+				System.out.println(rewardObject);
+
+				//  Load gold reward
+				gold = ((Long) rewardObject.get("gold")).intValue();
+				System.out.println("gold:");
+				System.out.println(gold);
+				
+				//  Load card reward
+				rewardCardString = (String) rewardObject.get("card");
+				System.out.println("rewardCardString:");
+				System.out.println(rewardCardString);
+
+	            System.out.println("--------------------------------");
 		    }
-            System.out.println("--------------------------------");
 	    }
 
         
