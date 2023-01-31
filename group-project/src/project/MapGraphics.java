@@ -130,8 +130,6 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(levelEntry);
 				
 				System.out.println("INFORMATION");
-				//levelOne = new Level(new GImage("media/images/level1.png", 1 * 300, 1 * 200), 1, levelOneEnemy, false, new Reward(program.getPlayer(), 10, null));
-				//Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 				
 				//Load level image source, x, and y position
 				String levelImageSource;
@@ -225,6 +223,10 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(rewardCardString);
 
 	            System.out.println("--------------------------------");
+	            //TODO Enemy deck and reward card
+	            Reward rewardToAdd = new Reward(program.getPlayer(), gold, new Slash());
+	            Enemy enemyToAdd = new Enemy(enemyName, new GImage(enemyImageSource), enemyHp, enemyMaxHp, enemyMana, enemyMaxMana, new ArrayList<Card>());
+	            Level levelToAdd = new Level(new GImage(levelImageSource, x * 300, y * 200), levelNumber, enemyToAdd, false, rewardToAdd);
 		    }
 	    }
 
