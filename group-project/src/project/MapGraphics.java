@@ -189,26 +189,22 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(enemyMaxMana);
 				
 				//  Iterate through enemy deck
+				JSONObject enemyDeckObject = ((JSONObject)levelEntry.get("enemy"));
+				JSONArray enemyDeckArray = (JSONArray) enemyDeckObject.get("deck");
+
+				System.out.println("--cards:");
+				Iterator enemyDeckArrayIter = enemyDeckArray.iterator();
+				while (enemyDeckArrayIter.hasNext()) {
+					String cardString = (String) enemyDeckArrayIter.next();
+					System.out.println(cardString);
+				}
+				
 				//    Load each card into deck
 				//Load level completed
 				//Iterate through reward
 				//  Load gold reward
 				//  Load card reward
 				
-				
-		    	System.out.println("Im going to kill ymself" + ((JSONObject)levelEntry.get("level_image")).toJSONString());
-		    	
-		    	JSONObject holyShit = ((JSONObject)levelEntry.get("enemy"));
-		    	
-		    	JSONArray deckArray = (JSONArray) holyShit.get("deck");
-		    	
-		    	System.out.println(deckArray.toJSONString());
-		    
-		    	Iterator<Map.Entry> itr1 = levelEntry.entrySet().iterator();
-		        while (itr1.hasNext()) {
-		            Map.Entry pair = itr1.next();
-		            System.out.println(pair.getKey() + " : " + pair.getValue());
-		        }
 		    }
             System.out.println("--------------------------------");
 	    }
