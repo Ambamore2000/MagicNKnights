@@ -23,3 +23,13 @@ Iterate through each level
     Load gold reward
     Load card reward
 ```
+
+## Testing Feature
+
+In order to ensure everything was completed, I had initially output all the information about all levels on startup of the application.
+However, other ways to test it is by playing the game and ensuring that:
+  - The level has the right image, x, and y position
+  - The enemy has the right name, image, hp, maxHp, mana, maxMana, and deck
+  - The level is completed
+  - The reward when killing the enemy is awarded correctly
+To double check, it may be best to instead of outputting the information on loadup, load the information whenever each level is loaded.
