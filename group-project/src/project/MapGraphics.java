@@ -243,18 +243,23 @@ public class MapGraphics extends GraphicsPane {
 				rewardCardString = (String) rewardObject.get("card");
 				System.out.println("rewardCardString:");
 				System.out.println(rewardCardString);
-				Card rewardCard = getCardFromString(rewardCardString);
+				
+				Reward rewardToAdd;
+				if (rewardCardString == null) {
+		            rewardToAdd = new Reward(program.getPlayer(), gold, null);
+				} else {
+		            rewardToAdd = new Reward(program.getPlayer(), gold, getCardFromString(rewardCardString));
+				}
 
 	            System.out.println("--------------------------------");
 	            //TODO Enemy deck and reward card
-	            Reward rewardToAdd = new Reward(program.getPlayer(), gold, rewardCard);
 	            Enemy enemyToAdd = new Enemy(enemyName, new GImage(enemyImageSource), enemyHp, enemyMaxHp, enemyMana, enemyMaxMana, enemyDeck);
 	            Level levelToAdd = new Level(new GImage(levelImageSource, x * 300, y * 200), levelNumber, enemyToAdd, false, rewardToAdd);
 	            
 	            if (levelToAdd.getLevelNumber() > 10) {
-	        		levelList1.add(levelToAdd);
+	        		levelList2.add(levelToAdd);
 	            } else {
-	            	levelList2.add(levelToAdd);
+	            	levelList1.add(levelToAdd);
 	            }
 		    }
 	    }
