@@ -134,6 +134,25 @@ public class MapGraphics extends GraphicsPane {
 				//Enemy levelOneEnemy = new Enemy("Fish", new GImage("media/images/monsters/LevelOne.png"), 5, 5, 10, 10, new ArrayList<Card>(Arrays.asList(new Stick(), new SmallManaPotion())));
 				
 				//Load level image source, x, and y position
+				String levelImageSource;
+				int x, y;
+				JSONObject levelImageObject = (JSONObject) levelEntry.get("level_image");
+				
+				System.out.println("levelImageObject:");
+				System.out.println(levelImageObject);
+				
+				levelImageSource = (String) levelImageObject.get("src");
+				System.out.println("levelImageSource:");
+				System.out.println(levelImageSource);
+				
+				x = ((Long) levelImageObject.get("x")).intValue();
+				System.out.println("x:");
+				System.out.println(x);
+				
+				y = ((Long) levelImageObject.get("y")).intValue();
+				System.out.println("y:");
+				System.out.println(y);
+				
 				//Load level number
 				//Iterate through enemy
 				//  Load enemy name
