@@ -210,11 +210,14 @@ public class MapGraphics extends GraphicsPane {
 				JSONArray enemyDeckArray = (JSONArray) enemyDeckObject.get("deck");
 
 				//    Load each card into deck
+				ArrayList<Card> enemyDeck = new ArrayList<Card>();
+				
 				System.out.println("--cards:");
 				Iterator enemyDeckArrayIter = enemyDeckArray.iterator();
 				while (enemyDeckArrayIter.hasNext()) {
 					String enemyCardString = (String) enemyDeckArrayIter.next();
 					System.out.println(enemyCardString);
+					enemyDeck.add(getCardFromString(enemyCardString));
 				}
 				System.out.println("--");
 				
@@ -244,7 +247,7 @@ public class MapGraphics extends GraphicsPane {
 	            System.out.println("--------------------------------");
 	            //TODO Enemy deck and reward card
 	            Reward rewardToAdd = new Reward(program.getPlayer(), gold, new Slash());
-	            Enemy enemyToAdd = new Enemy(enemyName, new GImage(enemyImageSource), enemyHp, enemyMaxHp, enemyMana, enemyMaxMana, new ArrayList<Card>());
+	            Enemy enemyToAdd = new Enemy(enemyName, new GImage(enemyImageSource), enemyHp, enemyMaxHp, enemyMana, enemyMaxMana, enemyDeck);
 	            Level levelToAdd = new Level(new GImage(levelImageSource, x * 300, y * 200), levelNumber, enemyToAdd, false, rewardToAdd);
 		    }
 	    }
