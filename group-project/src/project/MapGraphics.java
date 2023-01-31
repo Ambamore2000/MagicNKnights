@@ -159,9 +159,35 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(levelNumber);
 				
 				//Iterate through enemy
+				JSONObject enemyObject = (JSONObject) levelEntry.get("enemy");
+				
 				//  Load enemy name
+				String enemyName = (String) enemyObject.get("name");
+				System.out.println("enemyName:");
+				System.out.println(enemyName);
+				
 				//  Load enemy image source
+				String enemyImageSource = (String) enemyObject.get("image");
+				System.out.println("enemyImageSource:");
+				System.out.println(enemyImageSource);
+				
 				//  Load enemy hp, max hp, mana, max mana
+				int enemyHp = ((Long) enemyObject.get("hp")).intValue();
+				System.out.println("enemyHp:");
+				System.out.println(enemyHp);
+				
+				int enemyMaxHp = ((Long) enemyObject.get("maxHp")).intValue();
+				System.out.println("enemyMaxHp:");
+				System.out.println(enemyMaxHp);
+				
+				int enemyMana = ((Long) enemyObject.get("mana")).intValue();
+				System.out.println("enemyMana:");
+				System.out.println(enemyMana);
+				
+				int enemyMaxMana = ((Long) enemyObject.get("maxMana")).intValue();
+				System.out.println("enemyMaxMana:");
+				System.out.println(enemyMaxMana);
+				
 				//  Iterate through enemy deck
 				//    Load each card into deck
 				//Load level completed
