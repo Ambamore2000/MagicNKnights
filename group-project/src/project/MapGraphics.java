@@ -243,10 +243,11 @@ public class MapGraphics extends GraphicsPane {
 				rewardCardString = (String) rewardObject.get("card");
 				System.out.println("rewardCardString:");
 				System.out.println(rewardCardString);
+				Card rewardCard = getCardFromString(rewardCardString);
 
 	            System.out.println("--------------------------------");
 	            //TODO Enemy deck and reward card
-	            Reward rewardToAdd = new Reward(program.getPlayer(), gold, new Slash());
+	            Reward rewardToAdd = new Reward(program.getPlayer(), gold, rewardCard);
 	            Enemy enemyToAdd = new Enemy(enemyName, new GImage(enemyImageSource), enemyHp, enemyMaxHp, enemyMana, enemyMaxMana, enemyDeck);
 	            Level levelToAdd = new Level(new GImage(levelImageSource, x * 300, y * 200), levelNumber, enemyToAdd, false, rewardToAdd);
 		    }
