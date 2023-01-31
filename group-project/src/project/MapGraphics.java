@@ -154,6 +154,10 @@ public class MapGraphics extends GraphicsPane {
 				System.out.println(y);
 				
 				//Load level number
+				int levelNumber = ((Long) levelEntry.get("level")).intValue();
+				System.out.println("levelNumber:");
+				System.out.println(levelNumber);
+				
 				//Iterate through enemy
 				//  Load enemy name
 				//  Load enemy image source
