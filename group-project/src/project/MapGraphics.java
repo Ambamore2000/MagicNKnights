@@ -82,6 +82,25 @@ public class MapGraphics extends GraphicsPane {
 		}
 	}
 	
+	private Card getCardFromString(String cardString) {
+		switch (cardString) {
+			case "stick": return new Stick();
+			case "smallmanapotion": return new SmallManaPotion(); 
+			case "slash": return new Slash();
+			case "smallhealthpotion": return new SmallHealthPotion();
+			case "split": return new Split();
+			case "largemanapotion": return new LargeManaPotion();
+			case "largehealthpotion": return new LargeHealthPotion();
+			case "lifesteal": return new LifeSteal();
+			case "stab": return new Stab();
+			case "manarevive": return new ManaRevive();
+			case "revive": return new Revive();
+			case "soulsteal": return new SoulSteal();
+			case "suicide": return new Suicide();
+		}
+		return null;
+	}
+	
 	private void initializeObjects() throws ParseException, FileNotFoundException, IOException {
 		background = new GImage("media/images/Background.png", 0, 0);
 		background.setSize(MainMenu.RESOLUTION_X, MainMenu.RESOLUTION_Y);
