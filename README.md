@@ -1,5 +1,8 @@
-# groupproject-team-1-b-aj
-groupproject-team-1-b-aj created by GitHub Classroom
+# STORY
+
+As part of my Application Development course, I led a team of 4 members to build a card turn-based game. This was one of my favorite projects, as it was the first project I worked with a team in a scrum manner. As the team leader, I organized tasks amongst the team, ensured everyone was on the same page, and assisted other members when needed. As a team, we planned out the project by prototyping and writing up a System Design Report which consisted of UML Diagrams, Interactions, and other necessary documentation needed prior to executing.
+
+# BELOW HERE IS A PART OF AN ASSIGNMENT
 
 ## Feature To Implement
 - Dynamic Loading of Levels (including enemies and rewards) with JSON files.
